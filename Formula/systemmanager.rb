@@ -1,8 +1,8 @@
 class Systemmanager < Formula
   desc "User-space macOS process orchestrator"
   homepage "https://github.com/harpertoken/course"
-  url "https://github.com/harpertoken/course/releases/download/v0.1.0/systemmanager-macos.tar.gz"
-  sha256 "e163f009c57fce50f4c9f8a5ac8b96ae925e55ae83e26a759243508c5435f34a"
+  url "https://github.com/harpertoken/course/releases/download/v0.1.1/systemmanager-macos.tar.gz"
+  sha256 "5f42bf3ba24b660a1d33ffcc1e881db6e98440dab9871c10a68486204625e3dd"
 
   def install
     bin.install "CLI" => "sysman"
