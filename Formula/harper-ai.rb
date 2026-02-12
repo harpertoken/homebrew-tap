@@ -18,8 +18,17 @@ class HarperAi < Formula
 
   def install
     system "cargo", "build", "--release", "--manifest-path=Cargo.toml"
-    bin.install "bin/harper" => "harper"
-    bin.install "bin/harper-batch" => "harper-batch" if File.exist?("bin/harper-batch")
+    
+    # Check both possible locations for binaries
+    if File.exist?("bin/harper")
+      bin.install "bin/harper" => "harper"
+      bin.install "bin/harper-batch" => "harper-batch" if File.exist?("bin/harper-batch")
+    elsif File.exist?("target/release/harper")
+      bin.install "target/release/harper" => "harper"
+      bin.install "target/release/harper-batch" => "harper-batch" if File.exist?("target/release/harper-batch")
+    else
+      raise "Binary not found in expected location"
+    end
   end
 
   test do
