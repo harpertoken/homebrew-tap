@@ -1,4 +1,4 @@
-class Harper < Formula
+class HarperAi < Formula
   desc "AI for the terminal - translates natural language into reviewed, executable commands"
   homepage "https://github.com/harpertoken/harper"
   version "0.4.0"
