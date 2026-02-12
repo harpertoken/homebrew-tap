@@ -17,9 +17,9 @@ class HarperAi < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "build", "--release"
-    bin.install "target/release/harper" => "harper"
-    bin.install "target/release/harper-batch" => "harper-batch" if File.exist?("target/release/harper-batch")
+    system "cargo", "build", "--release", "--manifest-path=Cargo.toml"
+    bin.install "bin/harper" => "harper"
+    bin.install "bin/harper-batch" => "harper-batch" if File.exist?("bin/harper-batch")
   end
 
   test do
