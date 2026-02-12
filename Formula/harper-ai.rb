@@ -17,7 +17,7 @@ class HarperAi < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "build", "--release", "--locked"
+    system "cargo", "build", "--release"
     bin.install "target/release/harper" => "harper"
     bin.install "target/release/harper-batch" => "harper-batch" if File.exist?("target/release/harper-batch")
   end
