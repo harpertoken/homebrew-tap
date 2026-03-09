@@ -7,18 +7,19 @@ class HarperAi < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/harpertoken/harper/archive/refs/tags/v0.7.0.tar.gz"
-      sha256 "04502fb5368a718318df5e1135985b58506e1db695bfbc56eb11ca9c92829490"
+      sha256 "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed"
     else
       url "https://github.com/harpertoken/harper/archive/refs/tags/v0.7.0.tar.gz"
-      sha256 "04502fb5368a718318df5e1135985b58506e1db695bfbc56eb11ca9c92829490"
+      sha256 "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed"
     end
   end
 
   depends_on "rust" => :build
 
   def install
-    system "cargo", "build", "--release", "--manifest-path=Cargo.toml"
-    
+    system "cargo", "build", "--release", "--bin", "harper", "--bin", "harper-batch", "--manifest-path=Cargo.toml"
+
+    # Check both possible locations for binaries
     if File.exist?("bin/harper")
       bin.install "bin/harper" => "harper"
       bin.install "bin/harper-batch" => "harper-batch" if File.exist?("bin/harper-batch")
@@ -26,7 +27,7 @@ class HarperAi < Formula
       bin.install "target/release/harper" => "harper"
       bin.install "target/release/harper-batch" => "harper-batch" if File.exist?("target/release/harper-batch")
     else
-      raise "Binary not found in expected location"
+      raise "Binary not found in expected location. Contents of target/release: #{Dir.glob("target/release/*")}"
     end
   end
 
