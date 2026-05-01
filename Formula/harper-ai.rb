@@ -1,16 +1,16 @@
 class HarperAi < Formula
   desc "AI for the terminal - translates natural language into reviewed, executable commands"
   homepage "https://github.com/harpertoken/harper"
-  version "0.7.0"
+  version "0.17.1"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/harpertoken/harper/archive/refs/tags/v0.7.0.tar.gz"
-      sha256 "04502fb5368a718318df5e1135985b58506e1db695bfbc56eb11ca9c92829490"
+      url "https://github.com/harpertoken/harper/archive/refs/tags/harper-0.17.1.tar.gz"
+      sha256 "18b87cccc71fc5e71e3979bac446eaa385f8b9daf1a319bc3a58c3ce13c50a0e"
     else
-      url "https://github.com/harpertoken/harper/archive/refs/tags/v0.7.0.tar.gz"
-      sha256 "04502fb5368a718318df5e1135985b58506e1db695bfbc56eb11ca9c92829490"
+      url "https://github.com/harpertoken/harper/archive/refs/tags/harper-0.17.1.tar.gz"
+      sha256 "18b87cccc71fc5e71e3979bac446eaa385f8b9daf1a319bc3a58c3ce13c50a0e"
     end
   end
 
@@ -32,6 +32,6 @@ class HarperAi < Formula
   end
 
   test do
-    assert_match "Harper", shell_output("#{bin}/harper --version")
+    assert_match "harper v", shell_output("#{bin}/harper --version")
   end
 end
