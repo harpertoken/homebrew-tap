@@ -9,8 +9,8 @@ class HarperAi < Formula
       url "https://github.com/harpertoken/harper/archive/refs/tags/harper-0.17.2.tar.gz"
       sha256 "8411d0a8e541dc311d8896e776c75174d059f15232749e4f4aa1d2961ef76f3c"
     else
-      url "https://github.com/harpertoken/harper/archive/refs/tags/harper-0.17.1.tar.gz"
-      sha256 "18b87cccc71fc5e71e3979bac446eaa385f8b9daf1a319bc3a58c3ce13c50a0e"
+      url "https://github.com/harpertoken/harper/archive/refs/tags/harper-0.17.2.tar.gz"
+      sha256 "8411d0a8e541dc311d8896e776c75174d059f15232749e4f4aa1d2961ef76f3c"
     end
   end
 
