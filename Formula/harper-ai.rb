@@ -1,16 +1,16 @@
 class HarperAi < Formula
   desc "AI for the terminal - translates natural language into reviewed, executable commands"
   homepage "https://github.com/harpertoken/harper"
-  version "0.17.2"
+  version "0.20.1"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/harpertoken/harper/archive/refs/tags/harper-0.17.2.tar.gz"
-      sha256 "8411d0a8e541dc311d8896e776c75174d059f15232749e4f4aa1d2961ef76f3c"
+      url "https://github.com/harpertoken/harper/archive/refs/tags/harper-0.20.1.tar.gz"
+      sha256 "6865c6f64f31181ec9bee2f2968c4dfdf6aa024178c6c4b6df72538eb3fef6a3"
     else
-      url "https://github.com/harpertoken/harper/archive/refs/tags/harper-0.17.2.tar.gz"
-      sha256 "8411d0a8e541dc311d8896e776c75174d059f15232749e4f4aa1d2961ef76f3c"
+      url "https://github.com/harpertoken/harper/archive/refs/tags/harper-0.20.1.tar.gz"
+      sha256 "6865c6f64f31181ec9bee2f2968c4dfdf6aa024178c6c4b6df72538eb3fef6a3"
     end
   end
 
